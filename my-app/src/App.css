@@ -1,7 +1,14 @@
-.App {
+.body {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+}
+
+.navbar {
+	background-color: aquamarine;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .user-info {
@@ -9,4 +16,8 @@
 	background-color: aqua;
 	margin: 1em;
 	padding: 1em;
+}
+
+.navbar p {
+	cursor: pointer;
 }

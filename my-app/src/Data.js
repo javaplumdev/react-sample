@@ -1,12 +1,9 @@
 export const Data = [
 	{
 		id: 1,
-		name: 'Charlito',
-		age: 14,
+		bookName: 'Charlito',
+		price: 14,
 	},
-	{ id: 2, name: 'Alexandra', age: 16 },
-	{ id: 3, name: 'Alexandra', age: 16 },
-	// { id: 4, name: 'Alexandra', age: 16 },
-	// { id: 5, name: 'Alexandra', age: 16 },
-	// { id: 6, name: 'Alexandra', age: 16 },
+	{ id: 2, bookName: 'Alexandra', price: 16 },
+	{ id: 3, bookName: 'Bamp', price: 16 },
 ];

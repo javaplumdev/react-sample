@@ -1,13 +1,27 @@
+import React from 'react';
 import './App.css';
 import DataHolder from './Components/DataHolder';
 import Navbar from './Components/Navbar';
 import { Data } from './Data';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import ShowUserInfo from './Components/ShowUserInfo';
 
 function App() {
+	const [active, setActive] = React.useState(false);
+
 	const handleClick = (id) => {
-		Data.map((item) => {
+		showData(id);
+	};
+
+	const showData = (id) => {
+		// Data.map((item) => {
+		// 	if (item.id === id) {
+		// 		return <ShowUserInfo name={item.bookName} />;
+		// 	}
+		// });
+		Data.forEach((item) => {
 			if (item.id === id) {
-				console.log(item);
+				return <ShowUserInfo name={item.bookName} />;
 			}
 		});
 	};
@@ -17,7 +31,7 @@ function App() {
 			<DataHolder
 				key={item.id}
 				userID={item.id}
-				name={item.name}
+				name={item.bookName}
 				age={item.age}
 				handleClick={handleClick}
 			/>
@@ -27,7 +41,7 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar />
-			{mapItem}
+			{active ? { showData } : <div className="body">{mapItem}</div>}
 		</div>
 	);
 }
