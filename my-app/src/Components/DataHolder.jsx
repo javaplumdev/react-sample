@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-function DataHolder({ name, age, handleClick, userID }) {
+import { BookContent } from '../Context/ContextAPI';
+
+function DataHolder() {
+	const [movies, setMovies, name] = useContext(BookContent);
+
 	return (
 		<div className="user-info">
-			<p>Book name: {name}</p>
-
-			<Link>
-				<button onClick={() => handleClick(userID)}>Buy now</button>
-			</Link>
+			<p>{name}</p>
+			{movies.map((item) => {
+				return <p key={item.id}>{item.bookName}</p>;
+			})}
 		</div>
 	);
 }
