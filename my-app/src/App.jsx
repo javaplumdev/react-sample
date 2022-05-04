@@ -14,9 +14,18 @@ function App() {
 			<Router>
 				<div className="App">
 					<Navbar />
-					<DataHolder />
 					<Routes>
-						<Route path="/buy" element={ShowUserInfo} />
+						<Route
+							path="/"
+							element={
+								<>
+									<DataHolder />
+								</>
+							}
+						/>
+					</Routes>
+					<Routes>
+						<Route path="/buy/:id" element={<ShowUserInfo />} />
 					</Routes>
 				</div>
 			</Router>

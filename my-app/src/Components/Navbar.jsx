@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+
 function Navbar() {
 	return (
 		<div className="navbar">
-			<p>Home</p>
+			<Link to="/">Home</Link>
 			<div className="search-bar">
 				<input type="text" placeholder="Search" />
 				<button>Search</button>

@@ -3,8 +3,6 @@ import React, { useState, createContext } from 'react';
 export const BookContent = createContext();
 
 export function DataProviver(props) {
-	const name = 'tngina';
-
 	const [bookData, setBookData] = useState([
 		{
 			id: 1,
@@ -16,7 +14,7 @@ export function DataProviver(props) {
 	]);
 
 	return (
-		<BookContent.Provider value={[bookData, setBookData, name]}>
+		<BookContent.Provider value={[bookData, setBookData]}>
 			{props.children}
 		</BookContent.Provider>
 	);
